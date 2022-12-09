@@ -1,0 +1,4 @@
+<!--logs.wxml-->
+<web-view src="{{url}}"  bindmessage="postMessage"></web-view>
+
+
