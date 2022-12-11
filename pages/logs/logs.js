@@ -13,11 +13,19 @@ Page({
     console.log(e.detail)//接收H5传过来的数据
   },
 
-  onLoad(option) {
-    const {token,openid}=option
-    this.setData({
-     url:`http://localhost:8000/sports/home?token=${token}&&openid=${openid}`
-    })
+  onLoad(options) {
+    const {token,openid}=options
+    const url ='http://localhost:8000/home'
+    if (token) {
+      this.setData({
+        url:`${url}?token=${token}&openid=${openid}`
+       })
+    }else{
+      this.setData({
+        url:`${url}`
+       })
+    }
+
     console.log(this.data.url);
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(log => {
