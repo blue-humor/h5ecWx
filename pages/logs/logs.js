@@ -15,7 +15,7 @@ Page({
 
   onLoad(options) {
     const {token,openid}=options
-    const url ='http://localhost:8000/home'
+    const url ='http://localhost:8001/home'
     if (token) {
       this.setData({
         url:`${url}?token=${token}&openid=${openid}`
