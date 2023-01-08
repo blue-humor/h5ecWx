@@ -15,7 +15,9 @@ Page({
 
   onLoad(options) {
     const {token,openid}=options
-    const url ='http://localhost:8000/home'
+    const url ='http://localhost:8000/#home'
+    // const url ='http://47.96.24.184/#'
+
     if (token) {
       this.setData({
         url:`${url}?token=${token}&openid=${openid}`
